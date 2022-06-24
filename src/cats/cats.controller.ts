@@ -26,8 +26,8 @@ export class CatsController {
 
           data.forEach((img: any) => {
             html += `
-            <a href="/cats/${img.sys.id}">
-              <img src="${img.fields.file.url}" alt="${img.fields.title}">
+            <a style="text-decoration:none" href="/cats/${img.sys.id}">
+              <img width=400  src="${img.fields.file.url}" alt="${img.fields.title}">
             </a>`;
           });
           
@@ -58,7 +58,7 @@ export class CatsController {
           data.forEach((img: any) => {
             if (params.id == img.sys.id){
               html += `
-              <img src="${img.fields.file.url}" alt="${img.fields.title}">
+              <img width=800 src="${img.fields.file.url}" alt="${img.fields.title}">
               <a href="/cats/">Back</a>`;
             }
           });
