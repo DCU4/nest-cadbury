@@ -23,13 +23,10 @@
   "dependencies": {
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
-    "@nestjs/cli": "8.2.7",
     "@nestjs/platform-express": "^8.0.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
-  },
-  "devDependencies": {
+    "rxjs": "^7.2.0",
     "contentful": "^8.3.5",
     "@nestjs/cli": "^8.0.0",
     "@nestjs/schematics": "^8.0.0",
