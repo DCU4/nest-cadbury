@@ -15,11 +15,9 @@ async function getCustomEntries(entry: string): Promise<any[]> {
 export class CatsController {
   @Get()
   findAll() {
-
     let html: string = '<h1>Cadbury</h1>';
 
     return new Promise((resolve, reject) => {
-      
       getCustomEntries('cadbury')
         .then((res) => {
           let data = res[0].fields.images;
@@ -28,13 +26,13 @@ export class CatsController {
             html += `
             <a style="text-decoration:none" href="/cats/${img.sys.id}">
               <img width=400  src="${img.fields.file.url}" alt="${img.fields.title}">
-            </a>`;
+            </a>
+            `;
           });
-          
+
           resolve(html);
         })
         .catch((err) => console.log(err));
-
     });
   }
 
@@ -44,29 +42,26 @@ export class CatsController {
   }
 
   @Get(':id')
-  findOne(@Param() params): any {
-    // console.log(params.id);
-    
+  findOne(@Param() params): object {
     let html: string = '<h1>Cadbury</h1>';
 
     return new Promise((resolve, reject) => {
-      
       getCustomEntries('cadbury')
         .then((res) => {
           let data = res[0].fields.images;
 
           data.forEach((img: any) => {
-            if (params.id == img.sys.id){
+            if (params.id == img.sys.id) {
               html += `
               <img width=800 src="${img.fields.file.url}" alt="${img.fields.title}">
-              <a href="/cats/">Back</a>`;
+              <a href="/cats/">Back</a>
+              `;
             }
           });
-          
+
           resolve(html);
         })
         .catch((err) => console.log(err));
-
     });
   }
 }
