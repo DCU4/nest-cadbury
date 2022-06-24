@@ -2,8 +2,8 @@ import { Controller, Get, Param, Res } from '@nestjs/common';
 import { ContentfulClientApi, createClient } from 'contentful';
 
 const client = createClient({
-  space: 'tdvnjjwn64li',
-  accessToken: 'ijIjeJKS46vkmropMcvMbkJWK5eYEHu6gOuqYRfwPA0',
+  space: space,
+  accessToken: accessToken,
 });
 
 async function getCustomEntries(entry: string): Promise<any[]> {
