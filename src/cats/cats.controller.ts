@@ -1,11 +1,5 @@
 import { Controller, Get, Param, Res } from '@nestjs/common';
-let credentials = {};
-// import fs from 'fs'
-// import contentful from 'contentful';
 import { ContentfulClientApi, createClient } from 'contentful';
-// if (fs.existsSync('./credentials.json')) {
-//   credentials = import('./credentials.json');
-// }
 
 const client = createClient({
   space: 'tdvnjjwn64li',
@@ -46,13 +40,12 @@ export class CatsController {
 
   @Get('some')
   findSome() {
-    // fetch('')
     return 'This action returns some cats';
   }
 
   @Get(':id')
   findOne(@Param() params): any {
-    console.log(params.id);
+    // console.log(params.id);
     
     let html: string = '<h1>Cadbury</h1>';
 
